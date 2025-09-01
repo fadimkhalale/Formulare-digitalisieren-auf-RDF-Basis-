@@ -155,11 +155,17 @@ const formHTML = `
 												</tr>
 												<tr>
 														<td>Raumanforderung</td>
-														<td colspan="3" id="raum"></td>
+														<td id="raumV"></td>
+														<td id="raumS"></td>
+														<td id="raumP"></td>
+														
 												</tr>
 												<tr>
 														<td>Technikanforderung (Campus - Bereich)</td>
-														<td colspan="3" id="technik"></td>
+														<td id="technikV"></td>
+														<td id="technikS"></td>
+														<td id="technikP"></td>
+														
 												</tr>
 										</tbody>
 								</table>
@@ -402,8 +408,12 @@ function parseRDF() {
       swsVorlesung: "",
       swsSeminar: "",
       swsPraktikum: "",
-      raum: "",
-      technik: "",
+      raumV: "",
+	  raumS: "",
+	  raumP: "",
+      technikV: "",
+	  technikS: "",
+	  technikP: "",
       planungshinweise: "",
       kwHinweise: "",
       name: "",
@@ -520,8 +530,12 @@ function parseRDF() {
             else if (prop === "ex:swsVorlesung") data.swsVorlesung = value;
             else if (prop === "ex:swsSeminar") data.swsSeminar = value;
             else if (prop === "ex:swsPraktikum") data.swsPraktikum = value;
-            else if (prop === "ex:raum") data.raum = value;
-            else if (prop === "ex:technik") data.technik = value;
+            else if (prop === "ex:raumV") data.raumV = value;
+			else if (prop === "ex:raumS") data.raumS = value;
+			else if (prop === "ex:raumP") data.raumP = value;
+            else if (prop === "ex:technikV") data.technikV = value;
+			else if (prop === "ex:technikS") data.technikS = value;
+			else if (prop === "ex:technikP") data.technikP = value;
             else if (prop === "ex:planungshinweise")
               data.planungshinweise = value;
             else if (prop === "ex:kwHinweise") data.kwHinweise = value;
@@ -578,8 +592,12 @@ function fillZuarbeitsblatt(data) {
   setFieldContent("sws-v", data.swsVorlesung);
   setFieldContent("sws-s", data.swsSeminar);
   setFieldContent("sws-p", data.swsPraktikum);
-  setFieldContent("raum", data.raum);
-  setFieldContent("technik", data.technik);
+  setFieldContent("raumV", data.raumV);
+  setFieldContent("raumS", data.raumS);
+  setFieldContent("raumP", data.raumP);
+  setFieldContent("technikV", data.technikV);
+  setFieldContent("technikS", data.technikS);
+  setFieldContent("technikP", data.technikP);
   setFieldContent("rueckgabedatum", data.rueckgabedatum);
   setFieldContent("planungshinweise", data.planungshinweise);
   const signatureInput = document
